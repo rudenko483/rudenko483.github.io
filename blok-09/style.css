@@ -11,3 +11,39 @@
 @media(max-width:760px){.header,.hero,.section,.service-nav,footer{width:calc(100% - 40px)}.header{height:80px;gap:16px}.logo-name{display:none}.logo-mark{width:40px;height:40px;font-size:20px}.header-cta{margin-left:auto;margin-right:4px;padding:10px 13px;gap:22px;font-size:12px}.menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0;background:none;width:24px;height:44px}.menu-toggle span{width:24px;height:1px;background:#ddd;transition:transform .2s}.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.nav{display:none;position:absolute;left:-20px;right:-20px;top:80px;flex-direction:column;padding:20px;background:#000f;border-bottom:1px solid var(--line);gap:0}.nav.open{display:flex}.nav a{font-size:16px;padding:15px 0}.hero{padding:38px 0 34px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{padding:0}.hero-label{font-size:11px;margin-bottom:25px;padding:6px 10px}.hero h1{font-size:clamp(43px,10.3vw,68px);line-height:1.12;letter-spacing:-.035em}.hero-description{font-size:15px;line-height:1.8;margin-top:25px;max-width:430px}.hero-actions{margin-top:25px;gap:12px 22px}.hero-actions .button{font-size:13px;min-height:50px;padding:13px 17px;gap:28px}.secondary-link{font-size:12px;gap:9px}.hero-note{font-size:11px;margin-top:20px}.photo-wrap{height:420px}.hero-photo{object-position:77% center}.portrait-mark{left:20px;bottom:20px;font-size:34px}.photo-caption{font-size:9px;margin-top:12px}.service-nav{grid-template-columns:1fr}.service-nav>button{padding:20px 4px;font-size:14px}.service-nav>button+button{border-left:0;border-top:1px solid var(--line)}.service-nav small{font-size:12px}.service-nav b{font-size:21px}.section{padding:64px 0}.section-head{display:block;margin-bottom:30px}h2{font-size:39px;line-height:1.15}.section-head>p{font-size:14px;margin-top:20px;line-height:1.8}.services-layout{grid-template-columns:1fr;gap:24px}.service-image{height:310px}.service-image img{object-position:center 38%}.service-image figcaption{left:20px;bottom:20px;font-size:11px}.service-list{padding:0 18px}.demo-note{font-size:11px;padding:18px 0}.service-row{padding:21px 0;gap:12px}.service-row strong{font-size:15px;letter-spacing:-.035em}.service-row small{font-size:11px;line-height:1.7;margin-top:7px;max-width:195px}.price{font-size:12px;letter-spacing:-.05em}.price>i{font-size:18px;margin-left:5px}.service-extra{padding:18px 0;gap:12px}.service-extra>span{font-size:10px;max-width:90px}.service-extra button{font-size:11px;max-width:165px;text-align:right}.manifesto-layout{grid-template-columns:1fr;gap:28px}.manifesto h2{font-size:37px;line-height:1.2}.manifesto-copy>p{font-size:14px;line-height:1.9}.text-link{font-size:13px;margin-top:18px;gap:24px}.filter-bar{flex-wrap:wrap;margin-bottom:24px;gap:5px}.filter-bar button{font-size:12px;padding:10px 15px}.filter-bar>span{width:100%;margin:10px 0 0;font-size:11px}.looks-grid{grid-template-columns:1fr;gap:24px}.look-image{height:420px}.look-label{padding:18px 20px}.look-label h3{font-size:16px}.look-image>span{translate:0 0;font-size:11px;padding:9px 12px;bottom:15px;left:15px}.contact{padding-top:0}.contact-panel{grid-template-columns:1fr;padding:32px 24px;gap:28px}.contact-panel h2{font-size:37px}.contact-panel p{font-size:14px;margin-top:20px;line-height:1.8}.contact-action{text-align:left}.contact-action .button{width:100%;font-size:13px}.contact-action>span{font-size:11px;margin-top:14px}footer{display:grid;grid-template-columns:1fr auto;padding:25px 0 28px;gap:20px}.footer-logo{font-size:14px}footer>p{grid-column:1/-1;grid-row:2;font-size:11px}footer>span{margin-left:0;font-size:10px;grid-column:1;grid-row:3}footer>a:last-child{grid-column:2;grid-row:3;justify-self:end;font-size:11px}.booking-dialog{padding:36px 22px 24px}.booking-dialog h2{font-size:30px;margin-top:25px}.booking-dialog .eyebrow{font-size:10px}.booking-dialog>p:not(.eyebrow){font-size:12px}.booking-dialog select{font-size:13px}.booking-estimate strong{font-size:18px}.lightbox p{font-size:11px}}
 @media(max-width:380px){.hero h1{font-size:10.1vw}.hero-actions{gap:10px 14px}.hero-actions .button{font-size:12px;gap:20px}.secondary-link{font-size:11px}.photo-wrap{height:380px}.service-row strong{font-size:14px}.service-row small{font-size:10px;max-width:155px}.price{font-size:11px}.price>i{font-size:16px}.look-image{height:380px}.service-extra button{font-size:10px}.contact-panel{padding:28px 21px}.contact-panel h2{font-size:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;translate:none}.progress{display:none}.hero-photo{will-change:auto}}
+
+/* Readable supporting text in the hero and price list. */
+.hero-note{font-size:16px;line-height:1.75;color:#b4b6ba}
+.hero-description{font-size:17px}
+.secondary-link,.hero-actions .button{font-size:15px}
+.section-head>p{font-size:16px}
+.demo-note{font-size:16px;line-height:1.65}
+.service-row{align-items:start;padding-top:25px;padding-bottom:25px}
+.service-row strong{font-size:19px;line-height:1.5}
+.service-row small{font-size:16px;line-height:1.65;max-width:none;color:#b4b6ba}
+.price{font-size:18px;letter-spacing:-.025em;padding-top:2px}
+.service-extra>span{font-size:16px;max-width:none;line-height:1.65}
+.service-extra button{font-size:16px;max-width:none}
+.service-image{height:auto;min-height:540px}
+.service-image img{position:absolute;inset:0;height:100%;width:100%}
+.service-image figcaption{font-size:15px;line-height:1.6;color:#e0e1e4;right:20px}
+@media(max-width:1100px){
+ .service-row strong{font-size:18px}
+ .price{font-size:17px}
+ .service-extra{align-items:flex-start;flex-direction:column;gap:8px}
+ .service-extra button{text-align:left}
+}
+@media(max-width:760px){
+ .hero-note{font-size:16px}
+ .hero-description{font-size:16px}
+ .secondary-link{font-size:14px}
+ .hero-actions .button{font-size:15px}
+ .section-head>p,.demo-note{font-size:16px}
+ .service-row strong{font-size:18px}
+ .service-row small{font-size:16px;max-width:none}
+ .price{font-size:16px;letter-spacing:-.04em}
+ .service-extra>span,.service-extra button{font-size:16px;max-width:none}
+ .service-image{height:310px;min-height:0}
+ .service-image figcaption{font-size:15px}
+}
+

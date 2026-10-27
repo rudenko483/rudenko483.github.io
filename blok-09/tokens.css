@@ -1,0 +1,13 @@
+/* Adapted from the Resend style reference on Refero. */
+:root{
+ --bg:#000000;--ink:#f0f0f0;--heading:#ffffff;--line:#292d30;
+ --muted:#a1a4a5;--subtle:#6e727a;--accent:#9281f7;--accent-readable:#baa7ff;
+ --body:'Inter','Golos Text',Arial,sans-serif;
+ --display:'Playfair Display',Georgia,serif;
+ --mono:'JetBrains Mono',Consolas,monospace;
+ --page-width:1200px;--section-gap:96px;--space:4px;
+ --radius-button:6px;--radius-card:16px;
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --duration-fast:150ms;--duration-reveal:700ms;
+ color-scheme:dark;
+}

@@ -22,7 +22,7 @@ document.querySelectorAll('[data-gallery]').forEach(card=>card.addEventListener(
 document.querySelector('[data-gallery-prev]').addEventListener('click',()=>{current--;renderGallery()});document.querySelector('[data-gallery-next]').addEventListener('click',()=>{current++;renderGallery()});
 lightbox.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){current++;renderGallery()}if(e.key==='ArrowLeft'){current--;renderGallery()}});
 let ticking=false;
-function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;document.querySelector('.progress').style.transform=`scaleX(${max?scrollY/max:0})`;if(!reduceMotion.matches&&innerWidth>760){const pic=document.querySelector('.hero-photo');if(pic&&scrollY<innerHeight)pic.style.translate=`0 ${Math.min(scrollY*.04,22)}px`}ticking=false}
+function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;document.querySelector('.progress').style.transform=`scaleX(${max?scrollY/max:0})`;if(!reduceMotion.matches&&innerWidth>760){const pic=document.querySelector('.hero-photo');if(pic&&scrollY<innerHeight)pic.style.translate=`0 ${Math.min(scrollY*.025,10)}px`}ticking=false}
 addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateScroll);ticking=true}},{passive:true});updateScroll();
 document.addEventListener('visibilitychange',()=>{document.querySelectorAll('.ticker>div,.hero-stamp svg').forEach(el=>el.style.animationPlayState=document.hidden?'paused':'running')});
 
@@ -33,8 +33,3 @@ document.querySelectorAll('[data-time]').forEach(btn=>btn.addEventListener('clic
 document.querySelector('[data-demo-confirm]')?.addEventListener('click',()=>{const result=document.querySelector('.demo-result');const option=document.querySelector('#service-select').selectedOptions[0];result.textContent=`Пример записи: ${option.value}, ${chosenTime} · ${option.dataset.duration} · ${option.dataset.price}. Всё готово — это демонстрация, бронь не создавалась.`;result.hidden=false});
 document.querySelector('#service-select')?.addEventListener('change',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true});
 document.querySelectorAll('[data-book]').forEach(btn=>btn.addEventListener('click',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true}));
-const film=document.querySelector('.filmstrip');
-function moveFilm(direction){if(!film)return;const max=film.scrollWidth-film.clientWidth;const step=film.querySelector('.look-card').getBoundingClientRect().width+20;if(max<2){const cards=[...film.querySelectorAll('[data-gallery]')];const card=direction>0?cards[0]:cards[cards.length-1];card?.click();return}let target=film.scrollLeft+direction*step;if(target>max+5)target=0;if(target< -5)target=max;film.scrollTo({left:target,behavior:reduceMotion.matches?'instant':'smooth'})}
-document.querySelector('.film-next')?.addEventListener('click',()=>moveFilm(1));document.querySelector('.film-prev')?.addEventListener('click',()=>moveFilm(-1));
-const servicePic=document.querySelector('#service-preview-img');let picTimer;
-document.querySelectorAll('[data-preview]').forEach(row=>{function showPreview(){if(!servicePic||servicePic.getAttribute('src')===row.dataset.preview)return;clearTimeout(picTimer);servicePic.classList.add('swapping');picTimer=setTimeout(()=>{servicePic.src=row.dataset.preview;servicePic.alt=row.dataset.previewAlt;servicePic.classList.remove('swapping')},reduceMotion.matches?0:150)}row.addEventListener('pointerenter',showPreview);row.addEventListener('focus',showPreview)});

@@ -1,66 +1,110 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>БЛОК 09 — Твой стиль. Твои правила. / концепт</title>
-<meta name="description" content="БЛОК 09 — вымышленный барбершоп. Самостоятельный дизайн-концепт для портфолио.">
-<meta name="theme-color" content="#000000"><link rel="icon" href="assets/favicon.svg?v=red-large-1" type="image/svg+xml">
-<link rel="preload" href="assets/hero.webp" as="image"><link rel="stylesheet" href="assets/refero-fonts.css"><link rel="stylesheet" href="tokens.css?v=red-large-1"><link rel="stylesheet" href="style.css?v=red-large-1">
-<script src="app.js?v=receipt3" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20201f">
+  <meta name="description" content="БЛОК 09. Мужские стрижки и борода, примеры образов и демонстрационная запись.">
+  <meta property="og:title" content="БЛОК 09 — мужские стрижки и борода">
+  <meta property="og:description" content="Прайс, галерея стрижек и демонстрационная запись в барбершоп.">
+  <meta property="og:image" content="https://rudenko483.github.io/blok-09/assets/portfolio-preview.jpg">
+  <link rel="canonical" href="https://rudenko483.github.io/blok-09/">
+  <title>БЛОК 09 — мужские стрижки и борода</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" aria-label="БЛОК 09, главная" href="./">БЛОК<span>09</span></a>
+      <nav aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#gallery">Галерея</a><a href="#faq">Вопросы</a></nav>
+      <button class="button header-book" type="button" data-book>Демозапись</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Мужские<br>стрижки<br><em>и борода.</em></h1>
+        <p>Подберём форму под ваши волосы и покажем, как укладывать стрижку дома.</p>
+        <button class="button primary" type="button" data-book>Выбрать услугу <span class="arrow" aria-hidden="true"></span></button>
+      </div>
+      <figure class="hero-image">
+        <picture><source media="(max-width: 640px)" srcset="assets/hero-mobile.webp"><img src="assets/hero.webp" alt="Мужская стрижка с текстурным верхом и плавным переходом" width="1536" height="1024" fetchpriority="high"></picture>
+        <figcaption>Пример стрижки с плавным переходом</figcaption>
+      </figure>
+    </section>
+    <section class="paper" id="services" aria-labelledby="services-title">
+      <div class="wrap section price-layout">
+        <div><h2 id="services-title">Услуги</h2><p class="section-note">Демонстрационные цены и длительность.</p></div>
+        <div class="price-list">
+          <button type="button" data-book="hair"><span><strong>Мужская стрижка</strong><small>60 мин · мытьё и укладка</small></span><b>1 800 ₽</b><span class="arrow" aria-hidden="true"></span></button>
+          <button type="button" data-book="beard"><span><strong>Оформление бороды</strong><small>30 мин · длина и контур</small></span><b>1 000 ₽</b><span class="arrow" aria-hidden="true"></span></button>
+          <button type="button" data-book="combo"><span><strong>Стрижка и борода</strong><small>90 мин · две услуги за визит</small></span><b>2 500 ₽</b><span class="arrow" aria-hidden="true"></span></button>
+          <button type="button" data-book="machine"><span><strong>Стрижка машинкой</strong><small>30 мин · короткая длина</small></span><b>1 000 ₽</b><span class="arrow" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-head">
+        <div><h2 id="gallery-title">Примеры стрижек</h2><p class="section-note">Иллюстрации для выбора формы и длины.</p></div>
+        <div class="filters" role="group" aria-label="Фильтр галереи"><button type="button" data-filter="all" aria-pressed="true">Все</button><button type="button" data-filter="hair" aria-pressed="false">Стрижки</button><button type="button" data-filter="beard" aria-pressed="false">Борода</button></div>
+      </div>
+      <div class="gallery">
+        <button class="look" type="button" data-look="hair"><img src="assets/look-fade.webp" alt="Фейд с пробором и короткой бородой" width="600" height="750" loading="lazy"><span>Чистый переход <i class="arrow" aria-hidden="true"></i></span></button>
+        <button class="look" type="button" data-look="hair"><img src="assets/look-classic.webp" alt="Классическая стрижка с объёмом сверху" width="600" height="750" loading="lazy"><span>Свободная форма <i class="arrow" aria-hidden="true"></i></span></button>
+        <button class="look" type="button" data-look="beard"><img src="assets/look-beard.webp" alt="Густая борода с аккуратным контуром" width="600" height="750" loading="lazy"><span>Точный контур <i class="arrow" aria-hidden="true"></i></span></button>
+      </div>
+      <p class="sr-only" id="gallery-count" role="status"></p>
+    </section>
+    <section class="paper" id="faq" aria-labelledby="faq-title">
+      <div class="wrap section price-layout">
+        <h2 id="faq-title">Частые вопросы</h2>
+        <div class="questions">
+          <details><summary>Как выбрать услугу?</summary><p>Если нужна только форма и укладка, выберите мужскую стрижку. Для стрижки и оформления бороды за один визит подойдёт комплекс.</p></details>
+          <details><summary>Можно показать фото?</summary><p>Да. Полезно показать стрижку спереди и сбоку. Примеры можно посмотреть в <a href="#gallery">галерее</a>.</p></details>
+          <details><summary>Как работает запись?</summary><p>Вы выбираете услугу и пробное время, затем видите итог. Это концепт барбершопа, данные не отправляются.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="./">БЛОК<span>09</span></a><p>Демонстрационный проект для портфолио</p><button class="button" type="button" data-book>Попробовать запись</button></footer>
+  <noscript><p class="wrap">Для демонстрационной записи и фильтра галереи включите JavaScript.</p></noscript>
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="БЛОК 09 — Твой стиль. Твои правила. / концепт">
-<meta property="og:title" content="БЛОК 09 — Твой стиль. Твои правила. / концепт">
-<meta property="og:description" content="Вымышленный барбершоп: мужские стрижки, бритьё, лукбук и демонстрационная запись.">
-<meta property="og:url" content="https://rudenko483.github.io/blok-09/">
-<meta property="og:image" content="https://rudenko483.github.io/blok-09/portfolio-preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/portfolio-kit/launch.css?v=2"><link rel="stylesheet" href="/blok-09/portfolio-theme.css"><script src="/portfolio-kit/launch.js?v=1" defer data-project="blok-09" data-analytics-id=""></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "БЛОК 09", "url": "https://rudenko483.github.io/blok-09/", "inLanguage": "ru"}</script>
-<link rel="stylesheet" href="/portfolio-kit/receipt.css?v=1"><script src="/portfolio-kit/receipt.js?v=1" data-theme="blok" defer></script>
-<link rel="stylesheet" href="portfolio-layout.css"></head>
-<body data-brand="09">
-<a class="skip" href="#main">К содержанию</a><div class="progress" aria-hidden="true"></div>
-<header class="header">
- <a href="#" class="logo" aria-label="БЛОК 09 — на главную"><span class="logo-mark">09</span><span class="logo-name">БЛОК 09<small>Barbershop</small></span></a>
- <nav class="nav" id="navigation" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#manifesto">Подход</a><a href="#lookbook">Стиль</a><a href="#contacts">Запись</a></nav>
- <button class="header-cta" data-book>Записаться <span><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></button><button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
-</header>
-<main id="main">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-grid">
-<div class="hero-copy"><p class="hero-label entrance"><span></span>Калининград · мужские стрижки</p><h1 id="hero-title"><span class="line"><span>Твой стиль.</span></span><span class="line"><span>Твои правила.</span></span></h1><p class="hero-description entrance">Точная форма, чистые переходы и стрижка, <br>с которой удобно каждый день.</p><div class="hero-actions entrance"><button class="button primary" data-book>Выбрать услугу <span><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></button><a class="secondary-link" href="#lookbook">Посмотреть стрижки <span>→</span></a></div><p class="hero-note entrance">Стрижки. Борода. Внимание к деталям.</p></div>
-<div class="hero-art entrance"><div class="photo-wrap"><picture class="pf-hero-picture"><source media="(max-width: 640px)" srcset="hero-mobile.webp"><img src="assets/hero.webp" alt="Мужская стрижка с текстурой и плавным переходом — концептуальное фото" fetchpriority="high" width="1536" height="1024" class="hero-photo"></picture><span class="portrait-mark" aria-hidden="true">09</span></div><div class="photo-caption"><span>БЛОК 09</span><span>Barbershop / concept</span></div></div>
-</div></section>
-<div class="service-nav" aria-label="Быстрый выбор услуги"><button data-book data-service="Мужская стрижка"><span>Мужская стрижка<small>Форма и укладка</small></span><b><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></b></button><button data-book data-service="Стрижка бороды"><span>Оформление бороды<small>Длина и чистый контур</small></span><b><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></b></button><button data-book data-service="Стрижка + борода"><span>Стрижка и борода<small>Всё за один визит</small></span><b><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></b></button></div>
-<section class="services section" id="services">
- <div class="section-head reveal"><h2>Форма решает.</h2><p>Выбери услугу.<br>С формой определимся вместе.</p></div>
- <div class="services-layout"><figure class="service-image reveal"><img src="assets/process.jpg" alt="Работа машинкой над плавным переходом" loading="lazy" width="900" height="1100"><figcaption>Внимание к каждому миллиметру.</figcaption></figure><div class="service-list reveal"><p class="demo-note">Демонстрационный прайс вымышленного барбершопа.</p>
- <button class="service-row" data-book data-service="Мужская стрижка"><span><strong>Мужская стрижка</strong><small>Форма, мытьё, укладка · 60 мин</small></span><span class="price">1 800 ₽ <i><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></i></span></button>
- <button class="service-row" data-book data-service="Стрижка бороды"><span><strong>Стрижка бороды</strong><small>Контур, длина, характер · 30 мин</small></span><span class="price">1 000 ₽ <i><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></i></span></button>
- <button class="service-row" data-book data-service="Стрижка + борода"><span><strong>Стрижка + борода</strong><small>Полная перезагрузка · 90 мин</small></span><span class="price">2 500 ₽ <i><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></i></span></button>
- <button class="service-row" data-book data-service="Стрижка машинкой"><span><strong>Стрижка машинкой</strong><small>Чистая геометрия · 30 мин</small></span><span class="price">1 000 ₽ <i><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></i></span></button>
- <div class="service-extra"><span>Не знаешь, что выбрать?</span><button data-book>Начнём с консультации <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></button></div></div></div>
-</section>
-<section class="manifesto section" id="manifesto"><div class="manifesto-layout"><h2 class="reveal">Стрижка должна<br>подходить тебе.</h2><div class="manifesto-copy reveal"><p>К тому, как растут волосы. К тому, как ты одеваешься. И к тому, сколько времени готов тратить на укладку.</p><p>Сначала обсудим длину и форму. В конце покажем, как уложить волосы дома, чтобы результат держался дольше одного вечера.</p><a href="#lookbook" class="text-link">Найти свою форму <span>→</span></a></div></div></section>
-<section class="lookbook section" id="lookbook"><div class="section-head reveal"><h2>Твой следующий<br>образ.</h2><p>Выбери направление.<br>Адаптируем под твои волосы.</p></div><div class="filter-bar reveal" role="group" aria-label="Фильтр образов"><button class="active" data-filter="all" aria-pressed="true">Все</button><button data-filter="hair" aria-pressed="false">Стрижки</button><button data-filter="beard" aria-pressed="false">Борода</button><span>Иллюстративные референсы</span></div><div class="looks-grid">
- <button class="look-card reveal" data-category="hair" data-gallery="assets/look-fade.webp" data-title="Чистый переход"><div class="look-image"><img src="assets/look-fade.webp" alt="Фейд с пробором и короткой бородой" width="600" height="750" loading="lazy"><span>Рассмотреть <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></div><div class="look-label"><h3>Чистый переход</h3></div></button>
- <button class="look-card reveal" data-category="hair" data-gallery="assets/look-classic.webp" data-title="Свободная форма"><div class="look-image"><img src="assets/look-classic.webp" alt="Классическая мужская стрижка с объёмом" width="600" height="750" loading="lazy"><span>Рассмотреть <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></div><div class="look-label"><h3>Свободная форма</h3></div></button>
- <button class="look-card reveal" data-category="beard" data-gallery="assets/look-beard.webp" data-title="Точный контур"><div class="look-image"><img src="assets/look-beard.webp" alt="Густая борода с аккуратным контуром" width="600" height="750" loading="lazy"><span>Рассмотреть <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></div><div class="look-label"><h3>Точный контур</h3></div></button>
- </div><p class="gallery-live sr-only" aria-live="polite"></p></section>
+  <dialog id="booking" class="booking" aria-labelledby="book-title">
+    <button class="close" type="button" data-close aria-label="Закрыть"><span aria-hidden="true"></span></button>
+    <h2 id="book-title">Демозапись</h2>
+    <p>Выберите услугу и пример времени.</p>
+    <form id="booking-form">
+      <label for="service">Услуга</label>
+      <select id="service">
+        <option value="hair" data-price="1 800 ₽">Мужская стрижка</option>
+        <option value="beard" data-price="1 000 ₽">Оформление бороды</option>
+        <option value="combo" data-price="2 500 ₽">Стрижка и борода</option>
+        <option value="machine" data-price="1 000 ₽">Стрижка машинкой</option>
+      </select>
+      <fieldset><legend>Время</legend><div class="times"><label><input type="radio" name="time" value="12:00" checked><span>12:00</span></label><label><input type="radio" name="time" value="14:30"><span>14:30</span></label><label><input type="radio" name="time" value="17:00"><span>17:00</span></label></div></fieldset>
+      <p class="estimate"><span>Демостоимость</span><strong id="price" aria-live="polite">1 800 ₽</strong></p>
+      <button class="button primary" type="submit">Подтвердить демозапись <span class="arrow" aria-hidden="true"></span></button>
+    </form>
+  </dialog>
 
-<section class="contact section" id="contacts"><div class="contact-panel reveal"><div><h2>Пора обновить<br>стрижку?</h2><p>Выбери услугу и удобное время.<br>Остальное начнётся в кресле.</p></div><div class="contact-action"><button class="button primary" data-book>Записаться <span><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></button><span>Демонстрация онлайн-записи</span></div></div></section>
+  <dialog class="confirmation" id="confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-note">
+    <button class="close" type="button" data-close aria-label="Закрыть подтверждение"><span aria-hidden="true"></span></button>
+    <div class="confirmation-body">
+      <svg class="check" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="43"/><path d="m30 50 13 13 27-28"/></svg>
+      <h2 id="confirmation-title" tabindex="-1">Спасибо<br>за запись!</h2>
+      <p id="confirmation-summary"></p>
+      <p id="confirmation-note">Это демонстрация. Запись не отправлена, время не забронировано.</p>
+      <button class="button" type="button" data-close>Вернуться на сайт</button>
+    </div>
+  </dialog>
 
-<div class="pf-launch">
-  <nav class="pf-crumbs" aria-label="Быстрые ссылки"><a href="#services">Услуги <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></a><a href="#lookbook">Стрижки <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></a><a href="#contacts">Демозапись <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></a><a href="#pf-visit">Как добраться <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></a></nav>
-  <section class="pf-section" id="pf-faq" aria-labelledby="pf-faq-title"><h2 id="pf-faq-title">Перед визитом</h2><div class="pf-faq"><details><summary>Что входит в стрижку?</summary><p>Форма, мытьё и укладка. Время и демонстрационные цены указаны в разделе услуг.</p></details><details><summary>Как выбрать стиль?</summary><p>Откройте лукбук и сравните фейд, классическую стрижку и оформление бороды.</p></details><details><summary>Можно совмещать стрижку и бороду?</summary><p>Да. Доступна отдельная услуга с обеими процедурами.</p></details><details><summary>Можно сохранить время за собой?</summary><p>Демо показывает выбор услуги и времени. Бронирование не создаётся.</p></details><details><summary>Когда ответят?</summary><p>Для портфолио показан пример: в течение двух часов в рабочее время.</p></details></div></section>
-  <section class="pf-section" aria-labelledby="pf-reviews-title"><h2 id="pf-reviews-title">Отзывы</h2><p>Вымышленные примеры для портфолио.</p><div class="pf-reviews"><figure><blockquote>«Волосы отрастают аккуратно, даже когда проходит несколько недель.»</blockquote><figcaption>Мужская стрижка · демоотзыв</figcaption></figure><figure><blockquote>«Подобрали длину бороды, которая подходит к стрижке.»</blockquote><figcaption>Стрижка и борода · демоотзыв</figcaption></figure></div></section>
-  <section class="pf-section pf-team" aria-labelledby="pf-team-title"><div><h2 id="pf-team-title">Команда</h2><p>Барберы по мужским стрижкам, оформлению бороды и классическому бритью.</p></div><figure><img alt="Иллюстрация рабочего процесса проекта БЛОК 09" width="900" height="1348" loading="lazy" src="assets/process.jpg"><figcaption>Иллюстрация рабочего процесса, материалы для портфолио.</figcaption></figure></section>
-  <section class="pf-section" id="pf-visit" aria-labelledby="pf-visit-title"><h2 id="pf-visit-title">Как добраться</h2><p>Калининград — город для примера. Адрес бизнеса пока не указан.</p><a href="https://www.openstreetmap.org/#map=13/54.7104/20.4522">Карта Калининграда <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></a><button class="pf-button pf-map-button" type="button" data-portfolio-map hidden>Показать карту</button></section>
-</div>
-</main>
-<footer><a href="#" class="footer-logo" aria-label="БЛОК 09 — наверх">БЛОК 09</a><p>Авторский концепт для портфолио.<br>Вымышленный бренд. Фото и цены — для демонстрации.</p><span>© 2026</span><a href="#">Наверх <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 16V4m-5 5 5-5 5 5"/></svg></a><a href="privacy.html">Конфиденциальность</a></footer>
-<dialog id="booking" class="booking-dialog"><button class="dialog-close" aria-label="Закрыть окно">×</button><p class="eyebrow">БЛОК 09 · демо записи</p><h2>Занять кресло.</h2><p>Выбери услугу для предварительного расчёта.</p><label for="service-select">Услуга</label><select id="service-select"><option value="Мужская стрижка" data-price="1 800 ₽" data-duration="60 минут">Мужская стрижка</option><option value="Стрижка бороды" data-price="1 000 ₽" data-duration="30 минут">Стрижка бороды</option><option value="Стрижка + борода" data-price="2 500 ₽" data-duration="90 минут">Стрижка + борода</option><option value="Стрижка машинкой" data-price="1 000 ₽" data-duration="30 минут">Стрижка машинкой</option></select><div class="booking-estimate" aria-live="polite"><span id="estimate-time">60 минут</span><strong id="estimate-price">1 800 ₽</strong></div><p class="booking-note">Это демонстрация для портфолио. Реальная запись не создаётся, данные никуда не отправляются.</p><div class="demo-times"><span>Пример свободного времени</span><div role="group" aria-label="Выбрать время"><button data-time="12:00" class="selected" aria-pressed="true">12:00</button><button data-time="14:30" aria-pressed="false">14:30</button><button data-time="17:00" aria-pressed="false">17:00</button></div></div><button class="button primary" data-demo-confirm>Проверить запись <span><svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></span></button></dialog>
-<dialog id="lightbox" class="lightbox"><button class="dialog-close" aria-label="Закрыть фото">×</button><img alt=""><div><button data-gallery-prev aria-label="Предыдущее фото">←</button><p></p><button data-gallery-next aria-label="Следующее фото">→</button></div></dialog>
-<button type="button" class="pf-mobile" data-book>Выбрать услугу <svg class="link-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15 15 5m-8 0h8v8"/></svg></button></body></html>
+  <dialog class="photo-dialog" id="photo" aria-labelledby="photo-title">
+    <button class="close" type="button" data-close aria-label="Закрыть фото"><span aria-hidden="true"></span></button>
+    <img id="photo-image" alt="">
+    <h2 id="photo-title"></h2>
+  </dialog>
+</body>
+</html>

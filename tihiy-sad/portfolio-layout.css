@@ -31,3 +31,31 @@
 @media(max-width:700px) {
   .collection .catalog { grid-template-columns:minmax(0,1fr); }
 }
+
+.hero-intro .hero-feeling {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.25;
+}
+.hero-intro > p:not(.hero-feeling) {
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+.hero-intro .button { font-size: 1.125rem; }
+.hero-intro .hero-postscript { font-size: 1rem; line-height: 1.5; }
+.care-title h2, .questions h2 {
+  font-size: clamp(2rem, 4.6vw, 3.125rem);
+  line-height: 1.16;
+}
+.care-title .section-label { font-size: 1rem; }
+.care-grid h3, .questions summary { font-size: 1.25rem; font-weight: 700; }
+.care-grid p, .questions details p { font-size: 1.125rem; line-height: 1.6; }
+.questions summary { min-height: 44px; line-height: 1.4; }
+.questions summary::after { flex-shrink: 0; }
+.questions summary:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+@media(max-width:700px) {
+  .hero-intro > p:not(.hero-feeling), .hero-intro .hero-postscript {
+    display: block;
+    margin: .75rem 0 0;
+  }
+}

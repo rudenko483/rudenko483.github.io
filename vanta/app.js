@@ -1,9 +1,9 @@
 (() => {
   'use strict';
   const programs = {
-    refresh: {name:'Refresh', title:'Освежить автомобиль', price:6000, duration:'Около 4 часов'},
-    signature: {name:'Signature', title:'Вернуть глубину цвета', price:24000, duration:'Около 1–2 дней'},
-    complete: {name:'Complete', title:'Обновить комплексно', price:42000, duration:'Около 2–3 дней'}
+    refresh: {name:'Refresh', title:'Мойка и уборка', price:6000, duration:'Около 4 часов'},
+    signature: {name:'Signature', title:'Полировка и защита', price:24000, duration:'Около 1–2 дней'},
+    complete: {name:'Complete', title:'Кузов и салон целиком', price:42000, duration:'Около 2–3 дней'}
   };
   const form = document.getElementById('estimate-form');
   const body = document.getElementById('body');
@@ -20,7 +20,6 @@
   function update() {
     const c = calculation();
     setText('receipt-program', c.selected.title);
-    setText('receipt-english', c.selected.name);
     setText('receipt-body', c.bodyName);
     setText('receipt-extra', glass.checked ? 'Состав для стёкол' : 'Без дополнений');
     setText('receipt-duration', c.selected.duration);

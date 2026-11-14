@@ -1,1 +1,33 @@
 .collection .product .product-copy{padding-inline:clamp(.7rem,1.9vw,1.65rem)}.pf-launch{background:#f7f5ee}.pf-launch .pf-reviews figure{border:0;border-radius:0;background:#ede9dc}.pf-launch .pf-team{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.pf-launch h2{font-family:Georgia,serif;font-weight:400;letter-spacing:-.035em}@media(max-width:640px){.pf-launch .pf-team{grid-template-columns:1fr}}
+
+/* Catalog: consistent photo crop, clear pricing, and a full-width touch target. */
+.collection {
+  background: #eee9df;
+  color: #21382a;
+  --muted: #4e5d50;
+  --line: #a9b0a0;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+.collection-heading { text-align: left; }
+.collection .catalog { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(1rem,2.6vw,2rem); }
+.collection .product { display:flex; flex-direction:column; overflow:hidden; background:#faf7f0; border:1px solid #d9d1c1; border-radius: .85rem; }
+.collection .product-photo { aspect-ratio: 1; }
+.collection .product-copy { display:flex; flex:1; flex-direction:column; padding:clamp(1rem,2.4vw,1.6rem); }
+.collection .product h3 { font-size:clamp(1.45rem,2.9vw,2.25rem); min-height:0; }
+.collection .product-copy > p { min-height:0; font-size:1.0625rem; }
+.collection .product-action { flex-direction:column; align-items:stretch; margin-top:auto; padding-top:1rem; border-top:0; }
+.collection .price { color:#203a2b; }
+.collection .choose-button { background:#294534; border:1px solid #294534; color:#fff9f1; min-height:48px; width:100%; font-size:1.0625rem; justify-content:space-between; }
+.collection .choose-button:hover { background:#193325; color:white; }
+.collection .choose-button:focus-visible { outline-color:#294534; }
+.dialog-preview img { aspect-ratio:1; height:auto; object-fit:cover; }
+.detail-note p { font-size:1.125rem; }
+.story-notes blockquote { font-size:clamp(3.25rem,8vw,7rem); }
+@media(max-width:1000px) {
+  .header { height:auto; min-height:84px; display:grid; grid-template-columns:minmax(0,1fr) auto; padding-block: .6rem; }
+  .header nav { display:flex; flex-wrap:wrap; grid-row:2; grid-column:1/-1; gap:0 1rem; }
+  .header .saved { grid-row:1; grid-column:2; font-size:1rem; }
+}
+@media(max-width:700px) {
+  .collection .catalog { grid-template-columns:minmax(0,1fr); }
+}

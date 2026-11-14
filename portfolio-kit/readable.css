@@ -1,0 +1,16 @@
+.header nav a, #nav a, .pf-crumbs a, .footer nav a {
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+.pf-crumbs a, .footer nav a, .header nav a, #nav a {
+  min-height: 44px;
+  align-content: center;
+}
+.text-link, .footer-link { font-size: 1.125rem; font-weight: 700; }
+.pf-reviews blockquote { font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.32; }
+.header-cta { font-size: 1rem; }
+@media (max-width: 640px) {
+  .header nav { min-width: 0; flex-wrap: wrap; column-gap: .65rem; }
+  .header:not(.flower-header) nav a { font-size: 1rem; }
+  .flower-header nav a { font-size: 1.125rem; }
+}

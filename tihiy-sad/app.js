@@ -1,7 +1,7 @@
 const products = {
-  morning: {name:'Розовое утро',description:'Садовые розы, гербера и гвоздики. Свободная форма в нежно-розовой гамме.',image:'morning-v2.webp',prices:[3900,5500,7200],sizes:['Небольшой','Средний','Большой']},
-  whisper: {name:'Тихое признание',description:'Пыльно-розовые розы и лёгкая статица в молочной бумаге.',image:'whisper-v2.webp',prices:[4500,6200,8100],sizes:['Небольшой','Средний','Большой']},
-  iris: {name:'Один прекрасный ирис',description:'Персиковый ирис на длинном стебле. На изображении — один цветок.',image:'iris-v2.webp',prices:[900,2100,3300],sizes:['Один цветок','Три стебля','Пять стеблей']}
+  morning: {name:'Розовое утро',description:'Розы, гербера и гвоздики.',image:'pink.jpg',prices:[3900,5500,7200],sizes:['Небольшой','Средний','Большой']},
+  whisper: {name:'Тихое признание',description:'Розовые розы с сиреневыми цветами.',image:'roses.jpg',prices:[4500,6200,8100],sizes:['Небольшой','Средний','Большой']},
+  iris: {name:'Один прекрасный ирис',description:'Персиковый ирис на длинном стебле. На изображении — один цветок.',image:'field.jpg',prices:[900,2100,3300],sizes:['Один цветок','Три стебля','Пять стеблей']}
 };
 const dialog=document.querySelector('#composition');
 const size=document.querySelector('#size');
@@ -24,7 +24,7 @@ function open(id,button,restore=false){
   document.querySelector('#dialog-title').textContent=product.name;
   document.querySelector('#dialog-description').textContent=product.description;
   document.querySelector('#dialog-photo').src='assets/'+product.image;
-  document.querySelector('#dialog-photo').alt=product.name+' — визуальная концепция';
+  document.querySelector('#dialog-photo').alt=product.name;
   size.replaceChildren(...product.sizes.map((text,i)=>new Option(text,String(i))));
   size.value=restore?String(saved.size):'0';
   vase.checked=restore?saved.vase:false;

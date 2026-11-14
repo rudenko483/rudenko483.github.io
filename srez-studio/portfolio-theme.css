@@ -1,3 +1,0 @@
-:root { --pf-bg: #f0e7da; --pf-card: #faf6ef; --pf-text: #272522; --pf-accent: #732b29; --pf-button-text: #ffffff; }
-.hero .photo { background-image: url("assets/studio.webp"); }
-@media (max-width: 640px) { .hero .photo { background-image: url("hero-mobile.webp"); } }

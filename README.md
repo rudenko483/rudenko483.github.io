@@ -5,7 +5,7 @@
 | Проект | Открыть |
 | --- | --- |
 | KONTUR — барбершоп | [Посмотреть](https://rudenko483.github.io/) |
-| БЛОК 09 — барбершоп | [Посмотреть](https://rudenko483.github.io/blok-09/) |
+| БЛОК 09 — барбершоп | [Посмотреть](https://rudenko483.github.io/blok-09-studio/index.html) |
 | СРЕЗ Студия — барбершоп | [Посмотреть](https://rudenko483.github.io/srez-studio/) |
 | СРЕЗ — мужская парикмахерская | [Посмотреть](https://rudenko483.github.io/srez-barbershop/) |
 | VANTA — детейлинг | [Посмотреть](https://rudenko483.github.io/vanta/) |

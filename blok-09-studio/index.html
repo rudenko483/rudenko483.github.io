@@ -20,7 +20,7 @@
     <div class="wrap header-inner">
       <a class="brand" aria-label="БЛОК 09, главная" href="./">БЛОК<span>09</span></a>
       <nav aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#gallery">Галерея</a><a href="#faq">Вопросы</a></nav>
-      <button class="button header-book" type="button" data-book>Демозапись</button>
+      <button class="button header-book" type="button" data-book>Выбор услуги</button>
     </div>
   </header>
   <main id="main">
@@ -37,7 +37,7 @@
     </section>
     <section class="paper" id="services" aria-labelledby="services-title">
       <div class="wrap section price-layout">
-        <div><h2 id="services-title">Услуги</h2><p class="section-note">Демонстрационные цены и длительность.</p></div>
+        <div><h2 id="services-title">Услуги</h2><p class="section-note">Стоимость и длительность услуг.</p></div>
         <div class="price-list">
           <button type="button" data-book="hair"><span><strong>Мужская стрижка</strong><small>60 мин · мытьё и укладка</small></span><b>1 800 ₽</b><span class="arrow" aria-hidden="true"></span></button>
           <button type="button" data-book="beard"><span><strong>Оформление бороды</strong><small>30 мин · длина и контур</small></span><b>1 000 ₽</b><span class="arrow" aria-hidden="true"></span></button>
@@ -69,12 +69,12 @@
       </div>
     </section>
   </main>
-  <footer class="wrap footer"><a class="brand" href="./">БЛОК<span>09</span></a><p>Демонстрационный проект для портфолио</p><button class="button" type="button" data-book>Попробовать запись</button></footer>
+  <footer class="wrap footer"><a class="brand" href="./">БЛОК<span>09</span></a><p>БЛОК 09 · Мужские стрижки и борода</p><button class="button" type="button" data-book>Попробовать запись</button></footer>
   <noscript><p class="wrap">Для демонстрационной записи и фильтра галереи включите JavaScript.</p></noscript>
 
   <dialog id="booking" class="booking" aria-labelledby="book-title">
     <button class="close" type="button" data-close aria-label="Закрыть"><span aria-hidden="true"></span></button>
-    <h2 id="book-title">Демозапись</h2>
+    <h2 id="book-title">Выбор услуги</h2>
     <p>Выберите услугу и пример времени.</p>
     <form id="booking-form">
       <label for="service">Услуга</label>
@@ -86,7 +86,7 @@
       </select>
       <fieldset><legend>Время</legend><div class="times"><label><input type="radio" name="time" value="12:00" checked><span>12:00</span></label><label><input type="radio" name="time" value="14:30"><span>14:30</span></label><label><input type="radio" name="time" value="17:00"><span>17:00</span></label></div></fieldset>
       <p class="estimate"><span>Демостоимость</span><strong id="price" aria-live="polite">1 800 ₽</strong></p>
-      <button class="button primary" type="submit">Подтвердить демозапись <span class="arrow" aria-hidden="true"></span></button>
+      <button class="button primary" type="submit">Посмотреть итог <span class="arrow" aria-hidden="true"></span></button>
     </form>
   </dialog>
 
@@ -96,7 +96,7 @@
       <svg class="check" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="43"/><path d="m30 50 13 13 27-28"/></svg>
       <h2 id="confirmation-title" tabindex="-1">Спасибо<br>за запись!</h2>
       <p id="confirmation-summary"></p>
-      <p id="confirmation-note">Это демонстрация. Запись не отправлена, время не забронировано.</p>
+      <p id="confirmation-note">Время не забронировано.</p>
       <button class="button" type="button" data-close>Вернуться на сайт</button>
     </div>
   </dialog>

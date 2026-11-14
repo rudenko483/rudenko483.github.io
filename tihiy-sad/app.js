@@ -39,7 +39,7 @@ dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=
 size.addEventListener('change',update);vase.addEventListener('change',update);
 card.addEventListener('input',()=>{status.textContent='';});
 function remember(){saved={id:current,size:Number(size.value),vase:vase.checked,card:card.value};document.querySelector('#selection-count').textContent='1';}
-document.querySelector('#composition-form').addEventListener('submit',event=>{event.preventDefault();remember();status.textContent='Выбор сохранён в этой вкладке. Заказ не оформлялся.';});
+document.querySelector('#composition-form').addEventListener('submit',event=>{event.preventDefault();remember();status.textContent='Спасибо! Выбор сохранён в этой вкладке. Заказ не оформлялся.';});
 document.querySelector('#open-selection').addEventListener('click',event=>{
   if(saved){open(saved.id,event.currentTarget,true);return;}
   const toast=document.querySelector('#toast');toast.textContent='Пока пусто. Выберите одну из трёх композиций.';toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),5000);

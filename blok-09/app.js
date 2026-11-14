@@ -30,6 +30,6 @@ const moving=new IntersectionObserver(es=>es.forEach(e=>{e.target.style.animatio
 
 let chosenTime='12:00';
 document.querySelectorAll('[data-time]').forEach(btn=>btn.addEventListener('click',()=>{chosenTime=btn.dataset.time;document.querySelectorAll('[data-time]').forEach(b=>{const on=b===btn;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))});document.querySelector('.demo-result').hidden=true}));
-document.querySelector('[data-demo-confirm]')?.addEventListener('click',()=>{const result=document.querySelector('.demo-result');const option=document.querySelector('#service-select').selectedOptions[0];result.textContent=`Пример записи: ${option.value}, ${chosenTime} · ${option.dataset.duration} · ${option.dataset.price}. Всё готово — это демонстрация, бронь не создавалась.`;result.hidden=false});
+document.querySelector('[data-demo-confirm]')?.addEventListener('click',()=>{const result=document.querySelector('.demo-result');const option=document.querySelector('#service-select').selectedOptions[0];result.textContent=`Спасибо! Пример записи: ${option.value}, ${chosenTime} · ${option.dataset.duration} · ${option.dataset.price}. Всё готово — это демонстрация, бронь не создавалась.`;result.hidden=false});
 document.querySelector('#service-select')?.addEventListener('change',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true});
 document.querySelectorAll('[data-book]').forEach(btn=>btn.addEventListener('click',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true}));

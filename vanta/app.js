@@ -49,7 +49,7 @@
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 10000);
-    status.textContent = 'Файл расчёта подготовлен к сохранению.';
+    status.textContent = 'Готово! Файл расчёта подготовлен к сохранению.';
   });
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   function activate(tab) {

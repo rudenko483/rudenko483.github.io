@@ -23,6 +23,13 @@
 .pf-team img{display:block;width:100%;height:auto;max-height:23rem;object-fit:cover}
 .pf-button,.pf-mobile,.pf-launch .pf-button,.pf-content .pf-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.65rem 1.15rem;background:var(--pf-accent);color:var(--pf-button-text);border:1px solid transparent;border-radius:.4rem;text-decoration:none;font:inherit;font-weight:750;cursor:pointer}
 .pf-hero-picture{display:contents}
+.link-icon { display: inline-block; flex: 0 0 auto; width: 1em; height: 1em; vertical-align: -.12em; }
+.success-check { color: #238451; flex: 0 0 auto; display: block; }
+.success-message { display: flex; align-items: center; gap: .65rem; }
+.success-message .success-check { display: none; width: 1.5rem; height: 1.5rem; color: #238451; }
+.success-message:has(> p:not([hidden], :empty)) .success-check { display: block; }
+@media (prefers-color-scheme: dark) { .success-message .success-check { color: #47a873; } }
+body:has(#booking.booking-dialog) .success-message .success-check, .estimate-section .success-message .success-check { color: #65cf91; }
 .pf-map-button{margin:.6rem 0 .6rem .65rem}
 .pf-map{display:block;width:100%;height:clamp(15rem,45vw,25rem);margin-top:1rem;border:0;border-radius:.4rem}
 .pf-mobile,[hidden].pf-button{display:none}

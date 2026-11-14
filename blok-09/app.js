@@ -13,7 +13,7 @@ select.addEventListener('change',estimate);
 let lastFocus;
 function openDialog(dialog){lastFocus=document.activeElement;dialog.showModal();document.body.classList.add('modal-open')}
 document.querySelectorAll('[data-book]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.service)select.value=btn.dataset.service;estimate();closeMenu();openDialog(booking)}));
-document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');lastFocus?.focus()})});
+document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');if (!document.querySelector('dialog[open]')) lastFocus?.focus()})});
 document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});let count=0;document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter;if(!card.hidden){count++;card.classList.add('visible');if(!reduceMotion.matches)card.animate([{opacity:0,transform:'translateY(15px)'},{opacity:1,transform:'translateY(0)'}],{duration:400,easing:'ease-out'})}});document.querySelector('.gallery-live').textContent=`Показано образов: ${count}`}));
 const lightbox=document.querySelector('#lightbox');let current=0;
 function galleryItems(){return [...document.querySelectorAll('[data-gallery]')].filter(el=>!el.hidden)}
@@ -28,8 +28,22 @@ document.addEventListener('visibilitychange',()=>{document.querySelectorAll('.ti
 
 const moving=new IntersectionObserver(es=>es.forEach(e=>{e.target.style.animationPlayState=e.isIntersecting&&!document.hidden?"running":"paused"}));document.querySelectorAll(".ticker>div,.hero-stamp svg,.interlude-star").forEach(el=>moving.observe(el));
 
-let chosenTime='12:00';
-document.querySelectorAll('[data-time]').forEach(btn=>btn.addEventListener('click',()=>{chosenTime=btn.dataset.time;document.querySelectorAll('[data-time]').forEach(b=>{const on=b===btn;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))});document.querySelector('.demo-result').hidden=true}));
-document.querySelector('[data-demo-confirm]')?.addEventListener('click',()=>{const result=document.querySelector('.demo-result');const option=document.querySelector('#service-select').selectedOptions[0];result.textContent=`Спасибо! Пример записи: ${option.value}, ${chosenTime} · ${option.dataset.duration} · ${option.dataset.price}. Всё готово — это демонстрация, бронь не создавалась.`;result.hidden=false});
-document.querySelector('#service-select')?.addEventListener('change',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true});
-document.querySelectorAll('[data-book]').forEach(btn=>btn.addEventListener('click',()=>{const result=document.querySelector('.demo-result');if(result)result.hidden=true}));
+let chosenTime = '12:00';
+document.querySelectorAll('[data-time]').forEach(button => button.addEventListener('click', () => {
+  chosenTime = button.dataset.time;
+  document.querySelectorAll('[data-time]').forEach(item => {
+    item.classList.toggle('selected', item === button);
+    item.setAttribute('aria-pressed', String(item === button));
+  });
+}));
+document.querySelector('[data-demo-confirm]').addEventListener('click', () => {
+  const option = select.selectedOptions[0];
+  booking.close();
+  window.showPortfolioReceipt({
+    heading: 'Спасибо за запись!',
+    summary: [option.value, chosenTime, option.dataset.price].join(' · '),
+    note: 'Это демозапись. Бронь не создана.',
+    action: 'К услугам',
+    trigger: lastFocus,
+  });
+});

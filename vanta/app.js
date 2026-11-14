@@ -49,7 +49,13 @@
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 10000);
-    status.textContent = 'Готово! Файл расчёта подготовлен к сохранению.';
+    window.showPortfolioReceipt({
+      heading: 'Ваша смета готова',
+      summary: c.selected.name + ' · ' + money(c.total),
+      note: 'Файл передан браузеру для скачивания. Смета демонстрационная.',
+      action: 'К расчёту',
+      trigger: event.submitter,
+    });
   });
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   function activate(tab) {

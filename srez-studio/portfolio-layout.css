@@ -1,0 +1,1 @@
+.pf-launch{background:#f6f2eb}.pf-launch .pf-faq{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.pf-launch .pf-team{grid-template-columns:.75fr 1.25fr}.pf-launch .pf-reviews figure{border:0;border-top:2px solid var(--pf-accent)}@media(max-width:650px){.pf-launch .pf-faq,.pf-launch .pf-team{grid-template-columns:1fr}}

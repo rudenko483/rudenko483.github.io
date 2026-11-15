@@ -53,68 +53,100 @@
 .questions summary::after { flex-shrink: 0; }
 .questions summary:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
 
+.flower-header .nav-short, .hero-description-short { display: none; }
+
 @media (max-width: 700px) {
+  .header.flower-header nav {
+    justify-content: space-between;
+    column-gap: .375rem;
+  }
+
+  .header.flower-header nav a {
+    padding-block: .5rem;
+    font-size: 1rem;
+  }
+
+  .flower-header .nav-long, .hero-description-long { display: none; }
+  .flower-header .nav-short, .hero-description-short { display: inline; }
+
   .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 0 clamp(.75rem, 3vw, 1.5rem);
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    grid-template-areas:
+      "title title"
+      "lead photo"
+      "description photo"
+      "action action"
+      "postscript postscript"
+      "footer footer";
+    column-gap: clamp(.75rem, 4vw, 1.75rem);
+    padding-top: clamp(1.5rem, 5vw, 2.5rem);
   }
 
-  .hero > .section-label,
-  .hero h1,
-  .hero-bottom {
-    grid-column: 1 / -1;
+  .hero > .section-label { display: none; }
+
+  .hero h1 {
+    grid-area: title;
+    margin-bottom: clamp(1rem, 4.5vw, 1.75rem);
+    line-height: 1.04;
   }
 
-  .hero-intro {
-    grid-column: 1;
-    grid-row: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 1.25rem;
+  .hero-intro { display: contents; }
+
+  .hero-intro .hero-feeling {
+    grid-area: lead;
+    align-self: end;
+    margin-bottom: 0;
+    font-size: clamp(1.125rem, 4.9vw, 1.875rem);
+    line-height: 1.2;
+    text-wrap: balance;
   }
 
-  .hero-intro .hero-feeling { font-size: clamp(1.125rem, 4.8vw, 1.75rem); }
-
-  .hero-intro > p:not(.hero-feeling),
-  .hero-intro .hero-postscript {
+  .hero-intro > p:not(.hero-feeling) {
     display: block;
+    grid-area: description;
+    align-self: start;
     margin: .75rem 0 0;
     font-size: 1rem;
     line-height: 1.45;
   }
 
   .hero-intro .button {
+    grid-area: action;
     width: 100%;
-    max-width: 17rem;
+    min-height: 52px;
+    max-width: none;
     margin-top: 1rem;
-    padding-inline: clamp(.625rem, 2.5vw, 1rem);
-    gap: .375rem;
-    font-size: 1rem;
+    padding-inline: 1.125rem;
+    gap: 1rem;
+    font-size: 1.0625rem;
     line-height: 1.3;
   }
 
-  .hero-intro .button > span { flex-shrink: 0; }
+  .hero-intro .hero-postscript {
+    display: block;
+    grid-area: postscript;
+    margin-top: .625rem;
+    font-size: .9375rem;
+    line-height: 1.45;
+  }
 
   .hero-photo {
-    grid-column: 2;
-    grid-row: 3;
-    margin-top: 1.25rem;
+    grid-area: photo;
+    align-self: center;
+    margin: 0;
   }
 
   .hero-photo .photo-frame {
-    position: relative;
-    height: 100%;
-    min-height: clamp(13rem, 56vw, 21rem);
+    aspect-ratio: 4 / 5;
+    border-radius: .375rem .375rem clamp(1.75rem, 7vw, 3.5rem) .375rem;
   }
 
   .hero-photo img {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
     object-position: 60% center;
   }
+
+  .hero-bottom { grid-area: footer; }
 }
